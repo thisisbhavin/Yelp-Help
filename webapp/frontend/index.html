@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>EDA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="js/index.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        legend {
+            margin: 50 auto;
+            text-align: center;
+        }
+        tr.selected {background-color: #c93737;}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form>
+                <fieldset>
+
+                    <legend>YELP HELP!</legend>
+                
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="citySelection" class="form-label mt-4">City</label>
+                                <select class="form-select" id="citySelection">
+                                    <option selected disabled>Select a City</option>
+                                    <!-- Rest options will dynamically be generated -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="zipcodeSelection" class="form-label mt-4">Zipcode</label>
+                                <select class="form-select" id="zipcodeSelection">
+                                    <option selected disabled>Select a Zipcode</option>
+                                    <!-- Rest options will dynamically be generated -->
+                                </select>
+                            </div>
+                        </div>   
+                    </div>
+
+                    <div class="row">
+                        <div class="col text-center">
+                            <button type="submit" class="btn btn-primary" onclick="trigger_rest_names(); return false;" style="margin-top: 20px;">Submit</button>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+            </form>
+        </div>
+
+
+        <div class="row" style="padding-top: 20px;">
+
+            <div class="col-6", id="restnames">
+                <table id='table-restnames' class='table table-hover table-light' width='100%'></table>
+                <!-- restaurants name list table -->
+            </div>
+
+            <div class="col-6", id="menu">
+                <table id='table-menu' class='table table-hover table-light' width='100%'></table>
+                <!-- menu table -->
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
